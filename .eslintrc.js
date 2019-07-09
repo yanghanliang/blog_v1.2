@@ -45,6 +45,10 @@ module.exports = {
       optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // 函数后面不需要加空格
+    'space-before-function-paren': 'off',
+    // 关闭分号
+    "semi": [0]
   }
 }

@@ -70,4 +70,39 @@ $bac: blue;
 
 ---
 
-#### 
+#### 配置项目
+
+> 1. 配置 `eslint`
+
+`.eslintrc.js` 在这个文件的最后面添加如下规则
+
+```js
+
+// 函数后面不需要加空格
+'space-before-function-paren': 'off',
+// 关闭分号
+"semi": [0]
+
+```
+
+> 2. 配置 `package.json`
+
+在这个文件中找到 scripts 块
+
+添加如下配置
+
+```js
+
+// yarn lintfix - 可快速解决 eslint 语法错误
+"lintfix": "eslint --ext .js,.vue src --fix",
+
+```
+
+修改如下配置
+
+```js
+
+// 加上 --open 后，可让项目在启动后自动在浏览器中自动打开
+"dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --open",
+
+```
