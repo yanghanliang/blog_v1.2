@@ -80,8 +80,8 @@ $bac: blue;
 
 // 函数后面不需要加空格
 'space-before-function-paren': 'off',
-// 关闭分号
-"semi": [0]
+// 强制不加分号
+"semi": [2, "never"]
 
 ```
 
@@ -106,3 +106,23 @@ $bac: blue;
 "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --open",
 
 ```
+
+
+#### nginx 配置
+
+> 1. 让手机可以访问电脑（本地） web 服务（自己的网站）
+
+
+```nginx
+
+server {
+	listen       8080;
+	server_name  localhost;
+
+	location / {
+		proxy_pass http://127.0.0.1:8080;
+	}
+}
+
+```
+
